@@ -7,7 +7,7 @@ public class Prog54c {
         System.out.print("Enter in the radius of the circle: ");
         double radius = input.nextDouble();
         final double pi = 3.14159;
-        double area = Math.pow(radius, radius) * pi;
+        double area = Math.pow(radius, 2) * pi;
         double circum = 2*pi*radius;
 
         System.out.printf("The radius of the circle is %.3f", radius);
@@ -18,3 +18,9 @@ public class Prog54c {
         System.out.println();
     }
 }
+/*
+Enter in the radius of the circle: 3.712
+The radius of the circle is 3.712
+The area of the circle is 43.288
+The circumference of the circle is 23.323
+ */
