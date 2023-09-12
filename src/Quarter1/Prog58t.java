@@ -22,24 +22,6 @@ public class Prog58t {
         final double n = 0.05;
         final double p = 0.01;
 
-        int dolOwed = (int)change/(int)dol;
-        System.out.println("Dollars: " + dolOwed);
-        change -= (double)dolOwed;
-
-        int qOwed = (int)change/(int)q;
-        System.out.println("Quarters: " + qOwed);
-        change -= (double)qOwed;
-
-        int diOwed = (int)change/(int)di;
-        System.out.println("Dimes: " + diOwed);
-        change -= (double)diOwed;
-
-        int nOwed = (int)change/(int)n;
-        System.out.println("Nickels: " + nOwed);
-        change -= (double)nOwed;
-
-        int pOwed = (int)change/(int)p;
-        System.out.println("Pennies: " + pOwed);
-        change -= (double)pOwed;
+        double dolOwed = Math.round(change / dol);
     }
 }
