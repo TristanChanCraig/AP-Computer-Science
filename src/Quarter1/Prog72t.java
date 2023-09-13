@@ -12,10 +12,8 @@ public class Prog72t {
         int t2 = input.nextInt();
 
         int time = 0000;
-        if (t1 < t2) time = t2-t1;
-        else if (t1 > t2) time = 25 - (t1-t2);
 
-        System.out.println(time);
+        if ()
 
     }
 }
