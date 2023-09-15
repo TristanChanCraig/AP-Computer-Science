@@ -13,15 +13,15 @@ public class Prog72t {
 
         int time = Math.abs(t1 - t2);
 
-        if (t1 > t2) {
-            time = 2400 - t1 + t2;
-        }
-
         int m = 0;
         int h = 0;
 
-        while (time > 59) {
+        while (time > 99) {
             time -= 100;
+            h += 1;
+        }
+        while (time > 59) {
+            time -= 60;
             h += 1;
         }
         while (time > 0) {
