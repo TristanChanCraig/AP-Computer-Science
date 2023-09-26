@@ -7,24 +7,48 @@ public class LP4_10 {
 
         System.out.println("Rectangular Prism");
         System.out.print("Enter the length: ");
-        int l = input.nextInt();
+        int rpL = input.nextInt();
 
         System.out.print("Enter the width: ");
-        int w = input.nextInt();
+        int rpW = input.nextInt();
 
         System.out.print("Enter the height: ");
-        int h = input.nextInt();
+        int rpH = input.nextInt();
 
-        int v = l*w*h;
-        System.out.println("The volume is: " + v);
-        System.out.println();
+        int rpV = rpL*rpW*rpH;
+        System.out.println("The volume is: " + rpV + "\n");
 
 
 
         System.out.println("Sphere");
         System.out.print("Enter the radius: ");
-        int r = input.nextInt();
+        int sR = input.nextInt();
         final double pi = 3.14159;
-        double volume = (pi*Math.pow((r*2), 3)) / 6;
+        double sV = (pi*Math.pow((sR*2), 3)) / 6;
+        System.out.printf("%.3f\n\n", sV);
+
+
+
+        System.out.println("Cube");
+        System.out.println("Enter the length of each side: ");
+        int cL = input.nextInt();
+        int cV = cL * cL * cL;
+        System.out.print("The volume is: " + cV);
     }
 }
+/*
+Rectangular Prism
+Enter the length: 3
+Enter the width: 4
+Enter the height: 5
+The volume is: 60
+
+Sphere
+Enter the radius: 3
+113.097
+
+Cube
+Enter the length of each side:
+4
+The volume is: 64
+ */
