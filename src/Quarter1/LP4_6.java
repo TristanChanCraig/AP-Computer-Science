@@ -5,8 +5,6 @@ public class LP4_6 {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        String ops = "*+-/";
-
         int max = 10;
         int min = 1;
         int range = max - min + 1;
@@ -14,7 +12,12 @@ public class LP4_6 {
         int num1 = (int)(Math.random() * range) + min;
         int num2 = (int)(Math.random() * range) + min;
 
-        System.out.println("What is ");
+        String ops = "*+-/";
+        max = 4;
+        range = max - min + 1;
+        int op = (int)(Math.random() * range) + min;
+
+        System.out.printf("What is %d %s %d?", num1, num2, op);
 
 
     }
