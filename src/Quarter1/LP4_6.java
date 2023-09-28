@@ -13,12 +13,28 @@ public class LP4_6 {
         int num2 = (int)(Math.random() * range) + min;
 
         String ops = "*+-/";
-        max = 4;
+        max = 3;
+        min = 0;
         range = max - min + 1;
-        int op = (int)(Math.random() * range) + min;
+        int opNum = (int)(Math.random() * range) + min;
+        String op = ops.substring(opNum, opNum+1);
 
-        System.out.printf("What is %d %s %d?", num1, num2, op);
+        System.out.printf("What is %d %s %d? ", num1, op, num2);
+        int guess = input.nextInt();
+        int answer = 0;
+        if (op.equals("*")) answer = num1 * num2;
+        if (op.equals("+")) answer = num1 + num2;
+        if (op.equals("-")) answer = num1 - num2;
+        if (op.equals("/")) answer = num1 / num2;
 
-
+        if (answer == guess) System.out.print("Correct!");
+        else System.out.println("Wrong!");
     }
 }
+/*
+What is 10 / 10? 0
+Wrong!
+
+What is 8 * 8? 64
+Correct!
+ */
