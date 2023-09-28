@@ -68,3 +68,7 @@ public class StrInt6 {
         System.out.println(count);
     }
 }
+/*
+Enter a string: beautiful
+8
+ */
