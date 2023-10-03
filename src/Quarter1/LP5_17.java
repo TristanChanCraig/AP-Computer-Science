@@ -8,13 +8,26 @@ public class LP5_17 {
         final String password = "JonahIsABully";
         int tries = 0;
 
-        for (int lcv = 0; lcv < 3; lcv++) {
+        for (int lcv = 0; lcv < 4; lcv++) {
+            if (tries == 3) {
+                System.out.print("Access Denied");
+                break;
+            }
             System.out.print("Enter the password: ");
             if (password.equals(input.nextLine())) {
                 System.out.print("Welcome");
                 break;
             }
-            if (tries == 3) System.out.print("Access Denied");
+            tries++;
         }
     }
 }
+/*
+Enter the password: wah
+Enter the password: wah
+Enter the password: wah
+Access Denied
+
+Enter the password: JonahIsABully
+Welcome
+ */
