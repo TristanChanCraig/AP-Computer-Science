@@ -8,7 +8,16 @@ public class LP5_5 {
         System.out.print("Enter a positive integer: ");
         int num = input.nextInt();
 
+        int ten = 10;
 
+        int curNum = 0;
+
+        while (num != 0) {
+           curNum = num % ten;
+           num -= curNum;
+           System.out.println(curNum);
+           ten *= 10;
+        }
 
     }
 }

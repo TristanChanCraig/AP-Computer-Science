@@ -6,12 +6,20 @@ public class LP5_6 {
         Scanner input = new Scanner(System.in);
 
         System.out.print("Enter a positive integer: ");
-        String num = input.nextLine();
+        int num = input.nextInt();
 
         int digitsSum = 0;
 
-        for (int lcv = 0; lcv < num.length(); lcv++) {
-            digitsSum += (int)num.substring(lcv, lcv+1);
+        int ten = 10;
+
+        int curNum = 0;
+
+        while (num != 0) {
+            curNum = num % ten;
+            num -= curNum;
+            if (curNum >= 10) curNum -= (curNum-1);
+            digitsSum += curNum;
+            ten *= 10;
         }
         System.out.print(digitsSum);
     }
