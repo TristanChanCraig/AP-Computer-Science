@@ -8,17 +8,13 @@ public class LP5_5 {
         System.out.print("Enter a positive integer: ");
         int num = input.nextInt();
 
-        int ten = 10;
+        int firstNum = num / 100;
+        num -= firstNum * 100;
+        int secondNum = num / 10;
+        num -= secondNum * 10;
+        int thirdNum = num / 1;
 
-        int curNum = 0;
-
-        while (num != 0) {
-           curNum = num % ten;
-           num -= curNum;
-           System.out.println(curNum);
-           ten *= 10;
-        }
-
+        System.out.printf("%d\n%d\n%d", firstNum, secondNum, thirdNum);
     }
 }
 /*
