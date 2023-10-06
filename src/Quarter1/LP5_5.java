@@ -12,7 +12,7 @@ public class LP5_5 {
         num -= firstNum * 100;
         int secondNum = num / 10;
         num -= secondNum * 10;
-        int thirdNum = num / 1;
+        int thirdNum = num;
 
         System.out.printf("%d\n%d\n%d", firstNum, secondNum, thirdNum);
     }
