@@ -8,13 +8,30 @@ public class LP5_5 {
         System.out.print("Enter a positive integer: ");
         int num = input.nextInt();
 
-        int firstNum = num / 100;
-        num -= firstNum * 100;
-        int secondNum = num / 10;
-        num -= secondNum * 10;
-        int thirdNum = num;
+        int min = 1;
+        int max = 10;
+        int roundedDownNum = 0;
 
-        System.out.printf("%d\n%d\n%d", firstNum, secondNum, thirdNum);
+        while (true) {
+            if (min < num && num < max) {
+                roundedDownNum = min;
+                break;
+            }
+            else {
+                min *= 10;
+                max *= 10;
+            }
+        }
+
+        int currNum = 0;
+
+        while (true) {
+            currNum = num / roundedDownNum;
+            num -= currNum * roundedDownNum;
+            System.out.println(currNum);
+            roundedDownNum /= 10;
+            if (roundedDownNum == 0) break;
+        }
     }
 }
 /*
