@@ -13,6 +13,8 @@ public class Cl54b {
         myNum2 = num2;
         myNum3 = num3;
         myNum4 = num4;
+        mySum = 0;
+        myAvg = 0;
     }
 
     public void calc() {

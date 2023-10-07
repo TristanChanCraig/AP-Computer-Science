@@ -2,12 +2,14 @@ package Quarter1.Prog54cCl;
 
 public class Cl54c {
     final double pi = 3.14159;
-    double myRadius;
-    double myCircum;
-    double myArea;
+    private double myRadius;
+    private double myCircum;
+    private double myArea;
 
     public Cl54c(double radius) {
         myRadius = radius;
+        myCircum = 0;
+        myArea = 0;
     }
 
     public void calc() {
