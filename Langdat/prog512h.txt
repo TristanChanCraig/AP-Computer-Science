@@ -1,0 +1,18 @@
+Good morning life and all
+Things glad and beautiful
+My pockets nothing hold
+But he that owns the gold
+The sun is my great friend
+His spending has no end
+Hail to the morning sky
+Which bright clouds measure high
+Hail to you birds whose throats
+Would number leaves by notes
+Hail to you shady bowers
+And you green fields of flowers
+Hail to you women fair
+That make a show so rare
+In cloth as white as milk
+Be it calico or silk
+Good morning life and all
+Things glad and beautiful

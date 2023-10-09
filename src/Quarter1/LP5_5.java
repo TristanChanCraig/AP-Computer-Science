@@ -13,7 +13,7 @@ public class LP5_5 {
         int roundedDownNum = 0;
 
         while (true) {
-            if (min < num && num < max) {
+            if (min <= num && num < max) {
                 roundedDownNum = min;
                 break;
             }

@@ -1,0 +1,16 @@
+voitBB
+11.99
+SpauldingBB
+12.99
+WilsonBB
+14.99
+38oz_Bat
+7.75
+40oz_Bat
+8.75
+RJ_Glove
+21.98
+FL_Glove
+19.98
+GB_Glove
+24.75

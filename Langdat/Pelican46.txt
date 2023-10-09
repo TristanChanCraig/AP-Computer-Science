@@ -1,0 +1,36 @@
+30 5
+Ann 92
+Rick 88
+Charlie 93
+Bill 82
+Mike 92
+Amy 99
+Ann 91
+Joanne 88
+Patty 86
+Amy 97
+Ann 92
+Rick 88
+Charlie 93
+Bill 82
+Mike 72
+Amy 99
+Ann 91
+Joanne 88
+Patty 96
+Amy 67
+Ann 92
+Rick 88
+Charlie 93
+Bill 82
+Mike 92
+Amy 99
+Ann 61
+Joanne 88
+Patty 86
+Amy 97
+Rick
+Charlie
+Charlie
+Rick
+Rick

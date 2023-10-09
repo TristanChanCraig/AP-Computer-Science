@@ -1,0 +1,17 @@
+Many computer installations are now confronted with a
+threat akin to germ warfare, which could disable their
+largest machines.  A computer "virus" attacks a computer
+system in essentially the same way a biological virus
+attacks the human body.
+A computer virus is actually a small undetected program
+that, over time, infects other programs and eventurlly
+disables the entire system.  A typical virus in a host program
+might contain the follow instructions:
+1.  Temporarily suspend execution of host program.
+2.  Search the computer's memory for other likely uninfected programs.
+3.  If found, insert a copy of these instructions.
+4.  Return control of computer back to host program.
+This virus would take less than a second to execut, would
+be virtually undetected, and could attack indefinitely.  It can
+even spread to other computers, when an infected program
+is swapped or copied for another user.

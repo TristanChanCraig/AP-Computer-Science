@@ -1,0 +1,8 @@
+Fred Sluggo 1 2 1 4 1 3 1 4 0 4 0 4 5 5
+Lydia Crusher 2 3 4 6 4 5 2 5 1 4 1 1 2 8
+Braeden Boomer 1 1 2 4 5 8 3 6 1 5 2 6 0 2
+Noah Niller 1 3 4 7 2 6 3 4 4 8 1 3 2 7
+Ruben Romper 0 2 1 3 2 4 2 5 2 7 3 8 0 2
+Lisa Longball 1 1 2 4 5 7 2 8 3 4 4 8 1 5
+Claire Corner 1 4 2 3 3 8 4 9 4 5 2 6 1 5
+Jared Just 1 1 3 6 2 5 2 7 1 8 2 2 1 3
