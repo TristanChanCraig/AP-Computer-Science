@@ -18,3 +18,12 @@ public class Prog82aCl {
         System.out.print("Fine------------------$" + fine + ".00");
     }
 }
+/*
+Enter the speed limit: 30
+Enter the vehicle speed: 42
+Fine------------------$80.00
+
+Enter the speed limit: 55
+Enter the vehicle speed: 70
+Fine------------------$95.00
+ */
