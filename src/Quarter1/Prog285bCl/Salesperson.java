@@ -14,7 +14,7 @@ public class Salesperson {
                 myComm = 5000 * 0.075 + (mySales - 5000) * 0.085;
         } else if (myCode == 17) {
             if (mySales <= 3500)
-                myComm = mySales * 0.075;
+                myComm = mySales * 0.095;
             else
                 myComm = 3500 * 0.095 + (getSales() - 3500) * 0.12;
         }
@@ -35,6 +35,6 @@ public class Salesperson {
     public double getSales() {return mySales;}
 
     public String toString() {
-        return myID + "\t" + myCode + "\t" + mySales + "\t" + myComm;
+        return myID + "\t" + myCode + "\t\t" + mySales + "\t" + myComm;
     }
 }

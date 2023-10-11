@@ -26,7 +26,7 @@ public class Cl88a {
         myDiff = myNum1 - myNum2;
         myProduct = myNum1 * myNum2;
         myAvg = (myNum1 + myNum2) / 2;
-        myAbsValue = Math.abs();
+        myAbsValue = 0;
         if (myNum1 > myNum2) myMax = myNum1;
         else myMax = myNum2;
     }
