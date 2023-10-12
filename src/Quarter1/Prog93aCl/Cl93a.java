@@ -18,14 +18,19 @@ public class Cl93a {
     }
 
     public void calc() {
-
+        myBaseRate = myKwhUsed * 0.0475;
+        mySurcharge = Math.round((myBaseRate * 0.1) * 100.0) / 100.0;
+        myCityTax = Math.round((myBaseRate * 0.03) * 100.0) / 100.0;
+        myPay = Math.round((myBaseRate + mySurcharge + myCityTax) * 100.0) / 100.0;
+        myLatePay = Math.round((myPay * 1.04) * 100.0) / 100.0;
     }
 
-    public double getKwhUsed() { return myKwhUsed; }
+    public int getKwhUsed() { return myKwhUsed; }
+
     public double getPay() { return myPay; }
 
     public String toString() {
-        return "Kilowatt Hours Used: " + getKwhUsed(); // there is literally nothing else
+        return String.format("COMPSCI ELECTRIC\nKilowatts Used: %d\nBase Rate: $%.2f\nSurcharge: $%.2f\nCitytax: $%.2f\nPay this amount: $%.2f\nAfter July 27 pay: $%.2f", myKwhUsed, myBaseRate, mySurcharge, myCityTax, myPay, myLatePay);
     }
 
 }
