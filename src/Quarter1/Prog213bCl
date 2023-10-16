@@ -1,1 +1,22 @@
+package Quarter1.Prog213bCl;
+import java.util.Scanner;
+import java.io.File;
+import java.io.IOException;
 
+public class Prog213b {
+    public static void main(String[] args) {
+        try {
+            Scanner input = new Scanner(new File("Langdat/prog213b.dat"));
+            int qnt = 0;
+
+            while (input.hasNext()) {
+                int qnt = input.nextInt();
+                Cl213b wowsa = new Cl213b(qnt);
+                wowsa.calc()
+                System.out.println(wowsa);
+            }
+        } catch (IOException e) {
+            System.out.println("Can't find data file!");
+        }
+    }
+}
