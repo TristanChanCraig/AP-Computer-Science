@@ -15,7 +15,7 @@ public class Cl213b {
         if (myQuantity > 0 && myQuantity < 100) myPrice = 5.95;
         else if (myQuantity > 99 && myQuantity < 200) myPrice = 5.75;
         else if (myQuantity > 199 && myQuantity < 300) myPrice = 5.40;
-        else (myQuantity >= 300) myPrice = 5.15;
+        else if (myQuantity >= 300) myPrice = 5.15;
         myAmt = myPrice * myQuantity;
     }
 
