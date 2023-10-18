@@ -10,17 +10,22 @@ public class Prog209aCl {
             Scanner input = new Scanner(new File("Langdat/prog215a.dat"));
 
             int num = 0;
+            int less500 = 0;
+            int greaterOE500 = 0;
+            int totalNum = 0;
 
             while (input.hasNext()) {
-                num += input.nextInt();
-
+                num = input.nextInt();
+                Cl209b wee = new Cl209b(num);
+                wee.calc();
+                less500 += wee.getLessT();
+                greaterOE500 += wee.getGreaterOE();
+                totalNum += wee.getTotalNum();
             }
-            Cl209b wee = new Cl209b(num);
-            wee.calc();
 
-            System.out.println("The number of numbers less than 500 is: " + wee.getLessT());
-            System.out.println("The number of numbers greater than or equal to 500 is: " + wee.getGreaterOE());
-            System.out.print("The total number of numbers is: " + wee.getTotalNum());
+            System.out.println("The number of numbers less than 500 is: " + less500);
+            System.out.println("The number of numbers greater than or equal to 500 is: " + greaterOE500);
+            System.out.print("The total number of numbers is: " + totalNum);
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
