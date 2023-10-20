@@ -32,11 +32,11 @@ public class Prog213eCl {
 
             System.out.println("Langner Family");
             System.out.println("Age Group\tDistribution\tPercentage");
-            System.out.printf("<20\t\t\t%d\t\t\t%.2f\n", u20, (double)u20/totalNum*100);
-            System.out.printf("20-39\t\t%d\t\t\t%.2f\n", e20to39, (double)e20to39/totalNum*100);
-            System.out.printf("40-59\t\t%d\t\t\t%.2f\n", e40to59, (double)e40to59/totalNum*100);
-            System.out.printf("60-79\t\t%d\t\t\t%.2f\n", e60to79, (double)e60to79/totalNum*100);
-            System.out.printf(">79\t\t\t%d\t\t\t%.2f\n", a79, (double)a79/totalNum*100);
+            System.out.printf("<20\t\t\t%d\t\t\t\t%.2f\n", u20, (double)u20/totalNum*100);
+            System.out.printf("20-39\t\t%d\t\t\t\t%.2f\n", e20to39, (double)e20to39/totalNum*100);
+            System.out.printf("40-59\t\t%d\t\t\t\t%.2f\n", e40to59, (double)e40to59/totalNum*100);
+            System.out.printf("60-79\t\t%d\t\t\t\t%.2f\n", e60to79, (double)e60to79/totalNum*100);
+            System.out.printf(">79\t\t\t%d\t\t\t\t%.2f\n", a79, (double)a79/totalNum*100);
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }

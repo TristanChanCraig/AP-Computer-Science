@@ -25,13 +25,23 @@ public class Cl213e {
         else if (myNum >= 40 && myNum < 60) myE40to59++;
         else if (myNum >= 60 && myNum < 80) myE60to79++;
         else if (myNum >= 80) myA79++;
-        myTotalNum += myNum;
+        myTotalNum++;
+        System.out.println(myTotalNum);
     }
 
     public int getU20() {return myU20;}
     public int getE20to39() {return myE20to39;}
-    public int getE40to59() {return myTotalNum;}
+    public int getE40to59() {return myE40to59;}
     public int getE60to79() {return myE60to79;}
     public int getA79() {return myA79;}
     public int getTotalNum() {return myTotalNum;}
 }
+/*
+Langner Family
+Age Group	Distribution	Percentage
+<20			5				21.74
+20-39		5				21.74
+40-59		8				34.78
+60-79		3				13.04
+>79			2				8.70
+ */
