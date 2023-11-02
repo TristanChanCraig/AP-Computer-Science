@@ -35,11 +35,11 @@ public class SPCTemplate23 {
      */
     public int Problem2(int threshold) {
         /* Your code here */
-        int num = 0;
+        double num = 0;
         int count = 0;
         for (int lcv = 1; num < threshold; lcv++) {
-            count++;
             num += Math.sqrt(lcv);
+            count++;
         }
         return count;  // Remove
     }
@@ -76,8 +76,27 @@ public class SPCTemplate23 {
      */
     public String Problem4(int n) {
         /* Your code here */
+        String factors = "";
+        while((n%2==0 || n%3==0) || (n%5==0 || n%7==0)) {
+            if (n%2==0) {
+                n /= 2;
+                factors += "2 ";
+            }
+            if (n%3==0) {
+                n /= 3;
+                factors += "3 ";
+            }
+            if (n%5==0) {
+                n /= 2;
+                factors += "5 ";
+            }
+            if (n%7==0) {
+                n /= 2;
+                factors += "7 ";
+            }
+        }
 
-        return "";  // Remove
+        return factors.trim();  // Remove
     }
 
 
@@ -187,8 +206,13 @@ public class SPCTemplate23 {
      */
     public int Problem9(int n) {
         /* Your code here */
-
-        return -1;  // Remove
+        int count = 1;
+        while (n != 1) {
+            if (n%2==0) n = n/2;
+            else n = 3*n+1;
+            count++;
+        }
+        return count;  // Remove
     }
 
 
