@@ -76,27 +76,28 @@ public class SPCTemplate23 {
      */
     public String Problem4(int n) {
         /* Your code here */
-        String factors = "";
-        while((n%2==0 || n%3==0) || (n%5==0 || n%7==0)) {
-            if (n%2==0) {
-                n /= 2;
-                factors += "2 ";
-            }
-            if (n%3==0) {
-                n /= 3;
-                factors += "3 ";
-            }
-            if (n%5==0) {
-                n /= 2;
-                factors += "5 ";
-            }
-            if (n%7==0) {
-                n /= 2;
-                factors += "7 ";
-            }
-        }
-
-        return factors.trim();  // Remove
+//        String factors = "";
+//        while((n%2==0 || n%3==0) || (n%5==0 || n%7==0)) {
+//            if (n%2==0) {
+//                n /= 2;
+//                factors += "2 ";
+//            }
+//            if (n%3==0) {
+//                n /= 3;
+//                factors += "3 ";
+//            }
+//            if (n%5==0) {
+//                n /= 2;
+//                factors += "5 ";
+//            }
+//            if (n%7==0) {
+//                n /= 2;
+//                factors += "7 ";
+//            }
+//        }
+//
+//        return factors.trim();  // Remove
+        return "";
     }
 
 
