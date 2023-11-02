@@ -23,3 +23,8 @@ public class Prog213fCl {
         }
     }
 }
+/*
+The cost of 1338 is $93.66
+The cost of 9631 is $521.55
+The cost of 13561 is $682.44
+ */
