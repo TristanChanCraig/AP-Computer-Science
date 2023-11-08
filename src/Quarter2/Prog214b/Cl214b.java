@@ -20,6 +20,7 @@ public class Cl214b {
         myGrossPay = 0;
         myWHtax = 0;
         myFICAtax = 0;
+        myNetPay = 0;
     }
 
     public void calc() {
@@ -35,5 +36,11 @@ public class Cl214b {
         else if (myYTDpay + myGrossPay > 17300) myFICAtax = myGrossPay * 0.0605;
         else if (myYTDpay < 17300 && myYTDpay + myGrossPay > 17300) myFICAtax = (17300 - myYTDpay + myGrossPay) * 0.0605;
         else myFICAtax = 0;
+
+        myNetPay = myGrossPay - myWHtax - myFICAtax;
+    }
+
+    public String toString() {
+        return String.format("Employee Number: %d\nHours: %.2f\tRate: %.2f\tShift Factor: %.2f\n\tCurrent\t\t\tYear-to Date\nGross Pay: %.2f\t%.2f\nWithholding: %.2f\nFICA:\t\t%.2f\nNet Pay:\t%.2f\n", myEnum, myHours, myRate, mySF, myGrossPay, myYTDpay, myWHtax, myFICAtax, myNetPay);
     }
 }
