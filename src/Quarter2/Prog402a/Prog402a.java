@@ -14,11 +14,13 @@ public class Prog402a {
 
             Cl402a[] manwth = new Cl402a[100];
             int cnt = 0;
+            double avg = 0;
 
             while (input.hasNext()) {
                 int ID = input.nextInt();
                 int score = input.nextInt();
                 Cl402a bleh = new Cl402a(ID, score);
+                avg = bleh.getMyAvg();
 
                 manwth[cnt] = bleh;
                 cnt++;
@@ -26,8 +28,9 @@ public class Prog402a {
 
             for (int lcv = 0; lcv < cnt; lcv++) manwth[lcv].calc();
 
-            System.out.println("ID\t\tScore\t\tDiff");
+            System.out.println("ID\t\tScore\tDiff");
             for (int lcv = 0; lcv < cnt; lcv++) System.out.println(manwth[lcv].toString());
+            System.out.printf("Average Score = %.2f", avg);
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
