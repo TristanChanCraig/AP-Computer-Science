@@ -11,13 +11,16 @@ public class Cl402a {
         myID = ID;
         myScore = score;
         myDiff = 0;
-        myAvg += score;
+        myAvg = 0;
         cnt++;
     }
 
     public void calc() {
-        myAvg /= cnt;
         myDiff = myScore - myAvg;
+    }
+
+    public void inputAvg(double avg){
+        myAvg = avg;
     }
 
     public String toString() {
