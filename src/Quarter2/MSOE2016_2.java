@@ -15,10 +15,11 @@ public class MSOE2016_2 {
         System.out.print("What is the degree measure of angle a? ");
         double aA = input.nextInt();
 
-        double aC = Math.asin((Math.sin(aA)/a)*c);
+        double aC = Math.toDegrees(Math.asin((Math.sin(Math.toRadians(aA))/a)*c));
         double sV = 0;
         if (aA + aC < 180) sV = 180 - aC;
 
-        System.out.printf("%f degrees & %.2f", aC*100, sV);
+        System.out.printf("%.2f degrees & %.2f\n", aC, sV);
+        System.out.println(Math.toDegrees(Math.asin(1)));
     }
 }
