@@ -19,7 +19,7 @@ public class MSOE2016_2 {
         double sV = 0;
         if (aA + aC < 180) sV = 180 - aC;
 
-        System.out.printf("%.2f degrees & %.2f\n", aC, sV);
-        System.out.println(Math.toDegrees(Math.asin(1)));
+        System.out.printf("Angle C: %.2f degrees\n", aC);
+        if (aA + aC < 180) System.out.printf("Second Value: %.2f", 180 - aC);
     }
 }
