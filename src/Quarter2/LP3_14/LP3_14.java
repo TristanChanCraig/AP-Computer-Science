@@ -39,6 +39,6 @@ public class LP3_14 {
         System.out.printf("Aubrey: %d\nMartinez:%d\n\n", aCTv, mCTv);
 
         System.out.println("Candidate\t\tVotes\tPercentage");
-        System.out.printf("Aubrey:\t\t\t%d\t%%.2f\nMartinez:\t\t\t%d\t%%.2f\nTotal Votes:\t%d",ahh.getMyAv(), ahh.getMyAp(), ahh,getMyMv(), ahh.getMyMp(), ahh.getMyTv());
+        System.out.printf("Aubrey:\t\t\t%d\t%%.2f\nMartinez:\t\t\t%d\t%%.2f\nTotal Votes:\t%d",ahh.getMyAv(), ahh.getMyAp(), ahh.getMyMv(), ahh.getMyMp(), ahh.getMyTv());
     }
 }
