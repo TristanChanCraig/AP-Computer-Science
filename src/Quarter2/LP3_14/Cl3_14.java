@@ -31,8 +31,8 @@ public class Cl3_14 {
         myAv = myAnyV + myAnjV + myActV;
         myMv = myMnyV + myMnjV + myMctV;
         myTv = myAv + myMv;
-        myAp = (double)myAv / myTv;
-        myMp = (double)myMv / myTv;
+        myAp = (double)myAv / myTv * 100;
+        myMp = (double)myMv / myTv * 100;
     }
 
     public int getMyAv() {return myAv;}
