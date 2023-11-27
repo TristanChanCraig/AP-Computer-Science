@@ -1,4 +1,4 @@
-package Quarter2.LP_9;
+package Quarter2.LP3_9;
 
 import java.util.Scanner;
 
