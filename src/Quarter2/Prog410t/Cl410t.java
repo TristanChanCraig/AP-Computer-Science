@@ -7,7 +7,8 @@ public class Cl410t {
     private int myHHcnt;
     private int myPhhCnt;
     private double myAvgPhh;
-    private double myAvgHHic;
+    private int myRhhCnt;
+    private double myRhhAvgIC;
 
     public Cl410t(int id, int annIC, int hhNum) {
         myID = id;
@@ -16,13 +17,19 @@ public class Cl410t {
         myHHcnt += 1;
         myPhhCnt = 0;
         myAvgPhh = 0;
-        myAvgHHic = 0;
+        myRhhCnt = 0;
+        myRhhAvgIC = 0;
     }
 
     public void calc() {
         if (myAnnIC < 3750.00 + 750.00 * (myHHnum - 2)) myPhhCnt += 1;
+        else {
+            myRhhCnt++;
+            myRhhAvgIC += myAnnIC;
+        }
     }
 
     public double getMyAvgPhh() { return myAvgPhh = 1.0 * myPhhCnt / myHHcnt; }
-    public double getMyAvgHHic() { return myAvgHHic = 0;}
+    public double getMyRhhAvgIC() { return myRhhAvgIC = myRhhAvgIC / myRhhCnt; }
+    public String toString() { return myID + "\t" + myAnnIC + "\t" + myHHnum; }
 }

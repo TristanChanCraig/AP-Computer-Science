@@ -10,10 +10,13 @@ public class Prog410t {
             Scanner s1 = new Scanner(new File("Langdat/survey.dat"));
             Scanner s2 = new Scanner(new File("Langdat/survey2.dat"));
 
-
+            System.out.println("ID\tIncome\tMembers)
             while (s1.hasNext()) {
-
+                Cl410t wah = new Cl410t(s1.nextInt(), s1.nextInt(), s1.nextInt());
+                wah.calc();
+                System.out.println(wah.toString());
             }
+            System.out.println("Households wit")
 
             while (s2.hasNext()) {
 
