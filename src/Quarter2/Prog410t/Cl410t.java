@@ -17,8 +17,10 @@ public class Cl410t {
 
     public int calcRhhTic() { if (myAnnIC >= 3750.00 + 750.00 * (myHHnum - 2) ) return myAnnIC; else return 0; }
 
-    public double getMyAvgPhh(int pHHcnt, int hhCnt) { return 1.0 * pHHcnt / hhCnt; }
-    public double getMyRhhAvgIC(int rHHic, int rHHcnt) { return 1.0 * rHHic / rHHcnt; }
+    public static double getMyAvgPhh(int pHHcnt, int hhCnt) { return 100.0 * pHHcnt / hhCnt; }
+    public static double getMyRhhAvgIC(int rHHic, int rHHcnt) { return 1.0 * rHHic / rHHcnt; }
+
+    public int getMyID() { return myID; }
 
     public String toString() { return myID + "\t" + myAnnIC + "\t" + myHHnum; }
 }
