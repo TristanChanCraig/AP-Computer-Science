@@ -34,9 +34,6 @@ public class Prog410t {
 
                 rHHavgIC = getMyRhhAvgIC(rHHic, rHHcnt);
                 avgPhh = getMyAvgPhh(pHHcnt, hhCnt);
-
-                System.out.println(wah.toString());
-
             }
 
             Cl410t[] ree = new Cl410t[hhCnt];
@@ -82,8 +79,6 @@ public class Prog410t {
 
                 rHHavgIC2 = getMyRhhAvgIC(rHHic2, rHHcnt2);
                 avgPhh2 = getMyAvgPhh(pHHcnt2, hhCnt);
-
-                System.out.println(wah.toString());
             }
 
             Cl410t[] oof = new Cl410t[hhCnt2];
