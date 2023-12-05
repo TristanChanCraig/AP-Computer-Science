@@ -7,8 +7,7 @@ import java.util.Scanner;
 public class ScannerFileTemplate {
     public static void main(String[] args) {
         try {
-            Scanner input = new Scanner(new File("Langdat/   .dat"));
-
+            Scanner input = new Scanner(new File("Langdat/ .dat"));
 
             while (input.hasNext()) {
 
