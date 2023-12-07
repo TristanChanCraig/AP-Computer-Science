@@ -25,10 +25,13 @@ public class Prog213v {
 
             for (int lcv = 0; lcv < list.size(); lcv++) wow.calc(list.get(lcv));
 
-            System.out.println("The final balanec is: $" + wow.getAmount());
+            System.out.println("The final balance is: $" + wow.getAmount());
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
     }
 }
+/*
+The final balance is: $219.15
+ */

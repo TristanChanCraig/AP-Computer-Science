@@ -12,10 +12,10 @@ public class Cl214c {
     private double myTotalDue;
     private double myTypeCost;
 
-    public Cl214c(String type, int gallons, String needCW) {
-        regularUnleaded = 1359;
-        premium = 1479;
-        highOctane = 1429;
+    public Cl214c(String type, double gallons, String needCW) {
+        regularUnleaded = 1.359;
+        premium = 1.479;
+        highOctane = 1.429;
         myCarWashCost = 0.00;
         myGasCost = 0;
         myGallons = gallons;
@@ -39,8 +39,10 @@ public class Cl214c {
         myGasCost = myGallons * myTypeCost;
 
         if (myNeedCW.equals("Y")) {
+            myCarWashCost = 2;
             if (myGallons > 10) myCarWashCost = (2.00 - ((int)myGallons - 10) * 0.20);
         }
+        if (myCarWashCost < 0) myCarWashCost = 0;
         myTotalDue = myGasCost + myCarWashCost;
     }
 
@@ -63,11 +65,13 @@ public class Cl214c {
     public double getTotalDue() { return myTotalDue; }
 
     public String toString() {
-        return String.format("Bestest Gasoline Seller and Car Washering Company\n" +
+        return "Bestest Gasoline Seller and Car Washering Company\n" +
                 "------------------------------------------------------------\n" +
-                "%s\t\t%.2f @ %.3f\n" +
+                String.format("%s\t\t\t%.1f @ %.3f\n", getType(), myGallons, myTypeCost) +
                 "------------------------------------------------------------\n" +
-                "Gasoline\t\t\t\t%s\n" +
-                "Wash %s\t\t\t\t")
+                String.format("Gasoline\t\t\t\t%.2f\n", myGasCost) +
+                String.format("Wash %s\t\t\t\t\t%.2f\n", myType, myCarWashCost) +
+                "\t\t\t\t\t\t-------\n" +
+                String.format("Total Due\t\t\t\t%.2f\n", myTotalDue);
     }
 }
