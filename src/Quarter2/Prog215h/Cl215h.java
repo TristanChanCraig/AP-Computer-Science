@@ -33,7 +33,7 @@ public class Cl215h {
             idk += myScores.get(lcv);
         }
 
-        myAvg = idk / 8;
+        myAvg = idk / 6;
     }
 
     public void setCnt(int cnt) { myCnt = cnt; }
