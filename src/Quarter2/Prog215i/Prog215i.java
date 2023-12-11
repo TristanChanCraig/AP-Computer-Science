@@ -22,9 +22,9 @@ public class Prog215i {
                     hi.add(bah);
                 }
             }
-            hi
 
-            System.out.println("Vehicle\tMiles\tGallons\tMPG");
+
+            System.out.println("Vehicle\t\tMiles\t\tGallons\t\tMPG");
 
             for (int lcv = 0; lcv < hi.size(); lcv++) {
                 System.out.println(hi.get(lcv).toString());
@@ -37,6 +37,7 @@ public class Prog215i {
             int worstMPGnum = 0;
             double fleetAvg = 0;
             int cnt = 0;
+
             for (int lcv = 0; lcv < hi.size(); lcv++) {
                 Cl215i blop = hi.get(lcv);
                 if (blop.getMPG() > bestMPG) {
@@ -44,9 +45,9 @@ public class Prog215i {
                     bestMPGnum = blop.getVehicle();
                 }
 
-                if (blop.getMPG() < worstMPG) {
-                    bestMPG = blop.getMPG();
-                    bestMPGnum = blop.getVehicle();
+                if (blop.getMPG() < worstMPG || worstMPGnum == 0) {
+                    worstMPG = blop.getMPG();
+                    worstMPGnum = blop.getVehicle();
                 }
 
                 fleetAvg += blop.getMPG();
@@ -66,3 +67,22 @@ public class Prog215i {
         }
     }
 }
+/*
+Vehicle		Miles		Gallons		MPG
+1005		380.5		15.0		25.4
+1007		0.0		0.0		0.0
+1003		240.1		12.0		20.0
+1006		172.3		9.0		19.1
+1008		317.7		14.0		22.7
+1001		0.0		0.0		0.0
+1010		390.2		17.0		23.0
+1015		152.1		4.0		38.0
+1017		310.0		12.3		25.2
+1020		409.9		17.9		22.9
+
+MPG Statistics:
+Best:				1015
+Worst:				1007
+Fleet Average:		19.6
+Number of Vehicles:	10
+ */
