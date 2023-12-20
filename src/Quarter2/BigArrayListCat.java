@@ -32,7 +32,6 @@ public class BigArrayListCat {
 
 
             System.out.println("\n2. The third cat is named: " + cats.get(2).getName());
-            System.out.println();
 
 
 
@@ -84,17 +83,20 @@ public class BigArrayListCat {
             for (Cat cat : cats) {
                 System.out.printf("%s\t%.2f\t%d\t%.2f\n", cat.getName(), cat.getWeight(), cat.getAge(), cat.getCost());
             }
-            System.out.println();
 
 
 
-            System.out.println("\n11. The costs of the cats that are over $26 are: ");
             for (int lcv = 0; lcv < cats.size(); lcv++) {
-                if (cats.get(lcv).getCost() < 26) cats.remove(lcv);
+                if (cats.get(lcv).getCost() < 26) {
+                    cats.remove(lcv);
+                    lcv--;
+                }
             }
+            System.out.println("\n11. The costs of the remaining cats are: ");
             for (Cat cat : cats) {
-                System.out.println("$" + cat.getCost() + "\t");
+                System.out.print("$" + cat.getCost() + " ");
             }
+            System.out.println();
 
 
             System.out.println("\n12. The cats being put on a diet are: ");
@@ -102,7 +104,6 @@ public class BigArrayListCat {
                 Cat cat = cats.get(lcv);
                 if (cat.getWeight() > 15) System.out.println(cat.getName() + "\t");
             }
-            System.out.println();
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
