@@ -10,7 +10,9 @@ public class Prog465h {
             Scanner input = new Scanner(new File("Langdat/prog465h.dat"));
 
             while (input.hasNext()) {
-                int[][] mat = new int[input.nextInt()][input.nextInt()];
+                int row = input.nextInt();
+                int col = input.nextInt();
+                int[][] mat = new int[row][col];
 
                 int cnt = 0;
                 for (int r = 0; r < mat.length; r++)
@@ -31,8 +33,26 @@ public class Prog465h {
                             cnt2++;
                         }
 
-                for
+                for (int[] row : mat) {
+                    for (int num : row)
+                        System.out.print(num + "\t");
+                    System.out.println();
+                }
+                System.out.println();
 
+                for (int[] row : mat2) {
+                    for (int num : row)
+                        System.out.print(num + "\t");
+                    System.out.println();
+                }
+                System.out.println();
+
+                if (cnt2 * 3 > row * col) System.out.println("The Original Matrix is Sparse");
+                else if (cnt2 * 3 < row * col) System.out.println("The Original Matrix is Abundant");
+                else System.out.println("The Original Matrix and the Sparse Matrix are Equally Efficient);
+                System.out.println();
+
+                System.out.println();
             }
 
         } catch (IOException e) {
