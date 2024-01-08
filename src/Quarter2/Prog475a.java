@@ -11,7 +11,7 @@ public class Prog475a {
 
             int[][] mat = new int[11][2];
 
-            String[][] directFlight =
+//            String[][] directFlight =
 
             for (int r = 0; r < mat.length - 1; r++) {
                 for (int c = 0; c < mat[0].length - 1; c+=2) {
