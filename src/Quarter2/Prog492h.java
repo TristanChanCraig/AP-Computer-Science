@@ -2,6 +2,7 @@ package Quarter2;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Prog492h {
@@ -12,10 +13,14 @@ public class Prog492h {
             String[][] gen1 = new String[30][30];
             String[][] gen2 = new String[30][30];
 
-            for (int lcv = 0; lcv < gen1.length; lcv++)
-                for (int lcv2 = 0; lcv2 < gen1[0].length; lcv2++)
-                    gen1[lcv][lcv2] = input.next();
-
+            for (int lcv = 0; lcv < gen1.length; lcv++) {
+                ArrayList<String> str = new ArrayList<>();
+                String apple = input.nextLine();
+                str.add(apple);
+                for (int lcv2 = 0; lcv2 < gen1[0].length; lcv2++) {
+                    gen1[lcv][lcv2] = str.get(lcv).substring(lcv2, lcv2+1);
+                }
+            }
             while (true) {
                 int neighbors = 0;
                 for (int lcv = 0; lcv < gen1.length; lcv++) {
@@ -35,6 +40,11 @@ public class Prog492h {
                         }
                         else gen2[lcv][lcv2] = ".";
                     }
+                }
+                for (String cells[] : gen2) {
+                    for (String cell : cells)
+                        System.out.println(cell + "\t");
+                    System.out.println();
                 }
             }
 
