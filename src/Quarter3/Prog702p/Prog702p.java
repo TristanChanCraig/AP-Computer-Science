@@ -69,18 +69,27 @@ public class Prog702p {
             }
 
             int max = letterCnt[0];
+            String maxL = "a";
             int secondMax = 0;
+            String secMaxL = "";
             for (int lcv = 1; lcv < letterCnt.length; lcv++) {
-                if (letterCnt[lcv] > max) max = letterCnt[lcv];
-                else if (letterCnt[lcv] == max) secondMax = letterCnt[lcv];
+                if (letterCnt[lcv] > max) {
+                    max = letterCnt[lcv];
+                    maxL = alphabet.substring(lcv, lcv + 1);
+                }
+                else if (letterCnt[lcv] == max) {
+                    secondMax = letterCnt[lcv];
+                    secMaxL = alphabet.substring(lcv, lcv + 1);
+                }
             }
 
-            System.out.printf("The average value of the Hicca fur is: %.2f\n", totFurCost/hCnt);
-            System.out.printf("The average number of steps taken by the Wallies is: %.2f\n", totSteps/wCnt);
-            System.out.printf("The average size of the Beepers words is: %.2f\n\n", totWordSize/bCnt);
+            System.out.printf("The average value of the Hicca fur is: $%.2f\n", totFurCost/hCnt);
+            System.out.printf("The average number of steps taken by the Wallies is: %.2f steps\n", totSteps/wCnt);
+            System.out.printf("The average size of the Beepers' words is: %.2f letters\n\n", totWordSize/bCnt);
 
             System.out.println("EXTRA CREDIT:");
-            System.out.println("The most common letter(s) in all the Beepers' words is: " + max);
+            if (secondMax != 0) System.out.println("The most common letter(s) in all the Beepers' words is: " + maxL + ", " + secMaxL);
+            else System.out.println("The most common letter(s) in all the Beepers' words is: " + maxL);
             System.out.println();
 
             for (Animal a : list) {
@@ -100,3 +109,56 @@ public class Prog702p {
         }
     }
 }
+/*
+The average value of the Hicca fur is: $3.06
+The average number of steps taken by the Wallies is: 63.20 steps
+The average size of the Beepers' words is: 7.25 letters
+
+EXTRA CREDIT:
+The most common letter(s) in all the Beepers' words is: a, e
+
+Hicca's name is: Billy Buckner
+Its fur is worth: $3.25
+
+Wallie's name is: Fred Ballony
+Wallie has taken: 28.00 steps
+
+Beeper's name is: Nick Cuccia
+Beepers word is: coolbeans
+
+Hicca's name is: Murray Cox
+Its fur is worth: $4.00
+
+Hicca's name is: Carly Seifert
+Its fur is worth: $2.58
+
+Hicca's name is: Elias Smith
+Its fur is worth: $3.22
+
+Wallie's name is: Katy Rumberger
+Wallie has taken: 45.00 steps
+
+Wallie's name is: Tanya Barton
+Wallie has taken: 78.00 steps
+
+Wallie's name is: Casey Bats
+Wallie has taken: 97.00 steps
+
+Wallie's name is: Brandon Davis
+Wallie has taken: 68.00 steps
+
+Beeper's name is: Ingrid Sink
+Beepers word is: superdude
+
+Beeper's name is: Nico Binge
+Beepers word is: attaway
+
+Beeper's name is: Mike Break
+Beepers word is: done
+
+Hicca's name is: Brad Williamson
+Its fur is worth: $2.75
+
+Hicca's name is: Lorenzo Rapp
+Its fur is worth: $2.55
+ */
