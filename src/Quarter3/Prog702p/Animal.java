@@ -6,6 +6,7 @@ public class Animal implements names {
 
     public Animal(String name) {
         myName = name;
+        myWord = "";
     }
 
     public String getName() { return myName; }
