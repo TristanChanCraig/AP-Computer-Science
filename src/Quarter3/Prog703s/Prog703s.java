@@ -51,9 +51,9 @@ public class Prog703s {
                     if (((Apple)c).getColor().equals("Green")) greenCnt++;
                     else if (((Apple)c).getColor().equals("Gold")) goldCnt++;
                 } else if (c instanceof Windows) {
-                    if (((Windows)c).getWVNumber() == 7) v7cnt;
+                    if (((Windows)c).getWVNumber() == 7) v7cnt++;
                 } else if (c instanceof Linux) {
-                    if (((Linux)c))
+
                 }
             }
 

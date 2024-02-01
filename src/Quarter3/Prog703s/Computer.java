@@ -12,6 +12,6 @@ public class Computer implements comps {
     }
 
     public String getName() { return myName; }
-    public int getNum() { return myNum; }
-    public double getVal() { return myVal; }
+    public int getNumber() { return myNum; }
+    public double getValue() { return myVal; }
 }
