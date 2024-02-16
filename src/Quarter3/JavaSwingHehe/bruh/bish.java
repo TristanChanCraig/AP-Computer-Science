@@ -1,10 +1,13 @@
-package Quarter3.JavaSwingHehe;
+package Quarter3.JavaSwingHehe.bruh;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
 
 public class bish {
-    public static void main(String[] args) {
+    private JButton button;
+
+    bish() {
         ImageIcon img = new ImageIcon("smile.jpeg");
 
         JButton button = new JButton("goofy");
@@ -28,6 +31,10 @@ public class bish {
         frame.getContentPane().add(button);
 
         frame.add(label);
+    }
+
+
+    public static void main(String[] args) {
 
 
     }

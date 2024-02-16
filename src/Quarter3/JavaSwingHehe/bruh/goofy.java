@@ -1,4 +1,4 @@
-package Quarter3.JavaSwingHehe;
+package Quarter3.JavaSwingHehe.bruh;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
