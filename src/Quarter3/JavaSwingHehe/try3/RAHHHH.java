@@ -1,38 +1,28 @@
-package Quarter3.JavaSwingHehe.try2;
+package Quarter3.JavaSwingHehe.try3;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class boop extends JFrame implements ActionListener {
+public class RAHHHH extends JFrame implements ActionListener {
     private JButton button;
     private JTextField text;
     private double cnt;
+    private JLabel Text;
+    private JButton button2;
+    private JButton button3;
 
-    boop() {
+    RAHHHH() {
         ImageIcon img = new ImageIcon("smile.jpeg");
 
         text = new JTextField();
         cnt = 1;
         text.setText("marek stink count: " + cnt);
-        text.setBounds(0, 0, 250, 20);
         this.add(text);
-
-
-        button = new JButton();
-        button.setBounds(100, 100, 250, 500);
         button.addActionListener(this);
-        button.setText("YOU STINK");
-        button.setFocusable(false);
-        button.setIcon(img);
-        button.setHorizontalTextPosition(JButton.CENTER);
-        button.setVerticalTextPosition(JButton.BOTTOM);
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setLayout(null);
-        this.setSize(500,500);
-        this.setVisible(true);
         this.add(button);
+
+        button.setIcon(img);
     }
 
     @Override
@@ -45,6 +35,11 @@ public class boop extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        boop b = new boop();
+        RAHHHH r = new RAHHHH();
+        JFrame frame = new JFrame();
+        frame.setContentPane(r);
+        frame.setVisible(true);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setLayout(null);
     }
 }
