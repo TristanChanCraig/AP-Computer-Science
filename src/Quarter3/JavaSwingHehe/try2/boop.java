@@ -38,10 +38,9 @@ public class boop extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == button) {
-            cnt += (cnt * 0.1);
+            cnt += (cnt * (Math.random() * Math.random() * Math.random()));
             text.setText("marek stink count: " + cnt);
         }
-
     }
 
     public static void main(String[] args) {

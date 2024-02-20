@@ -37,7 +37,7 @@ public class RAHHHH extends JFrame implements ActionListener {
     public static void main(String[] args) {
         RAHHHH r = new RAHHHH();
         JFrame frame = new JFrame();
-        frame.setContentPane(r);
+//        frame.setContentPane();
         frame.setVisible(true);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLayout(null);

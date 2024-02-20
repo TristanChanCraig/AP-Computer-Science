@@ -24,3 +24,4 @@ public abstract class Animal {
         return (myNumCorn * cornCost) + (myNumHayBales * hayCost);
     }
 }
+
