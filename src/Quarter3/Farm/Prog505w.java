@@ -1,7 +1,5 @@
 package Quarter3.Farm;
 
-import jdk.jfr.Frequency;
-
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -32,6 +30,7 @@ public class Prog505w {
                     int cornEaten = input.nextInt();
                     cWeight += weight;
                     Cow wow = new Cow(name, weight, milk, hayEaten, cornEaten);
+                    income += wow.value(cornCost, hayCost);
                     animals.add(wow);
                     hay -= hayEaten;
                     corn -= cornEaten;
@@ -51,11 +50,11 @@ public class Prog505w {
                     cWeight += weight;
                     Horse fred = new Horse(name, weight, cornEaten, hayEaten, rides, rideCost);
                     animals.add(fred);
+                    hay -= hayEaten;
+                    corn -= cornEaten;
                 }
             }
 
-            // TODO: report income of the day, cumulative weight of all animals,
-            // TODO: if there's enough food to feed all, cow that makes the most money
 
             double minHorseValue = Double.MAX_VALUE;
             int minHorseIndex = 0;
@@ -71,9 +70,14 @@ public class Prog505w {
                 }
             }
 
-
+            boolean enoughH = (hay > 0);
+            boolean enoughC = (corn > 0);
 
             System.out.printf("Horse %s makes the least money\n", animals.get(minHorseIndex).getName());
+            System.out.println("Income of the day is: $" + income);
+            System.out.println("Cumulative weight of all animals is: " + cWeight + " pounds");
+            System.out.println("Is there enough hay to feed every animal? " + enoughH);
+            System.out.println("Is there enough corn to feed every animal? " + enoughC);
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
@@ -82,4 +86,8 @@ public class Prog505w {
 }
 /*
 Horse MarkMark makes the least money
+Income of the day is: $191.93
+Cumulative weight of all animals is: 32790 pounds
+Is there enough hay to feed every animal? true
+Is there enough corn to feed every animal? true
  */
