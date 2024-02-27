@@ -18,6 +18,8 @@ public class Prog505w {
             double cornCost = input.nextDouble();
             int cWeight = 0;
             double income = 0;
+            double mostVal = Double.MIN_VALUE;
+            String mVname = "None";
 
             int cowRows = input.nextInt();
             int cowPens = input.nextInt();
@@ -30,7 +32,12 @@ public class Prog505w {
                     int cornEaten = input.nextInt();
                     cWeight += weight;
                     Cow wow = new Cow(name, weight, milk, hayEaten, cornEaten);
-                    income += wow.value(cornCost, hayCost);
+                    double money = wow.value(cornCost, hayCost);
+                    income += money;
+                    if (mostVal < money) {
+                        mVname = name;
+                        mostVal = money;
+                    }
                     animals.add(wow);
                     hay -= hayEaten;
                     corn -= cornEaten;
@@ -78,6 +85,7 @@ public class Prog505w {
             System.out.println("Cumulative weight of all animals is: " + cWeight + " pounds");
             System.out.println("Is there enough hay to feed every animal? " + enoughH);
             System.out.println("Is there enough corn to feed every animal? " + enoughC);
+            System.out.printf("The cow that makes the most money is %s making $%.2f", mVname, mostVal);
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
@@ -90,4 +98,5 @@ Income of the day is: $191.93
 Cumulative weight of all animals is: 32790 pounds
 Is there enough hay to feed every animal? true
 Is there enough corn to feed every animal? true
+The cow that makes the most money is Barb making $12.47
  */
