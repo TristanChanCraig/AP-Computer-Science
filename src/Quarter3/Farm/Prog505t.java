@@ -2,6 +2,7 @@ package Quarter3.Farm;
 
 import java.io.File;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -11,13 +12,13 @@ public class Prog505t {
         try {
             Scanner input = new Scanner(new File("Langdat/prog505t.dat"));
 
-            List<Animal> animals = new ArrayList<>();
+            ArrayList<Horse> horses = new ArrayList<>();
+            ArrayList<Cow> cows = new ArrayList<>();
             int haybales = input.nextInt();
             double hbCost = input.nextDouble();
             int corncobs = input.nextInt();
             double ccCost = input.nextDouble();
             int numCows = input.nextInt();
-            double income = 0;
 
             for (int lcv = 0; lcv < numCows; lcv++) {
                 int weight = input.nextInt();
@@ -25,10 +26,7 @@ public class Prog505t {
                 int hbEaten = input.nextInt();
                 int ccEaten = input.nextInt();
                 Cow wow = new Cow("Cow " + lcv, weight, dailyM, hbEaten, ccEaten);
-                animals.add(wow);
-                haybales -= hbEaten;
-                corncobs -= ccEaten;
-                income += wow.value(ccCost, hbCost);
+                cows.add(wow);
             }
 
             int numHorses = input.nextInt();
@@ -40,12 +38,64 @@ public class Prog505t {
                 int numRides = input.nextInt();
                 double cost = input.nextDouble();
                 Horse red = new Horse("Horse " + lcv, weight, hbEaten, ccEaten, numRides, cost);
-                animals.add(red);
-                haybales -= hbEaten;
-                corncobs -= ccEaten;
-                income += red.value(ccCost, hbCost);
+                horses.add(red);
             }
 
+            Farm f = new Farm(horses, cows, haybales, corncobs, hbCost, ccCost);
+
+            double income = f.farmIncome();
+            double fCost = f.getCost();
+            double cWeight = f.getWeight();
+            boolean enoughF = f.feedAllAnimals();
+
+            for (Cow cow : cows) {
+                haybales -= cow.getNumHayBales();
+                corncobs -= cow.getNumCorn();
+            }
+            for (Horse horse : horses) {
+                haybales -= horse.getNumHayBales();
+                corncobs -= horse.getNumCorn();
+            }
+
+            double lowestMilk = Double.MAX_VALUE;
+            int nLM = -1;
+            double secLowestMilk = Double.MAX_VALUE;
+            int nSM = -1;
+            double thirdLowestMilk = Double.MAX_VALUE;
+            int nTM = -1;
+            for (int lcv = 0; lcv < cows.size(); lcv++) {
+                Cow cow = cows.get(lcv);
+                double milk = cow.getMilk();
+                if (milk < lowestMilk) {
+                    lowestMilk = milk;
+                    int nLM = lcv;
+                }
+                else if (milk < secLowestMilk) {
+                    secLowestMilk = milk;
+                    int nSM = lcv;
+                }
+                else if (milk < thirdLowestMilk) {
+                    thirdLowestMilk = milk;
+                    int nTM = lcv;
+                }
+            }
+            cows.remove(nLM);
+            nSM--;
+            nTM--;
+            cows.remove(nSM);
+            nTM--;
+            cows.remove(nTM);
+
+
+
+
+            if (enoughF) {
+                System.out.printf("There are %d bales of hay and %d cobs of corn left in the barn after successfully.\n", haybales, corncobs);
+            } else {
+                haybales = Math.abs(haybales);
+                corncobs = Math.abs(corncobs);
+                System.out.printf("There is insufficient food to feed the animals and we are requesting an immediate shipment of %d hay and $d corn.", haybales, corncobs);
+            }
 
 
         } catch (IOException e) {

@@ -1,7 +1,7 @@
 package Quarter3.Farm;
 
 public class Cow extends Animal {
-    private static final double MILK_PRICE_LB = 0.20;
+    private static double MILK_PRICE_LB = 0.20;
     private double myMilk;
 
     public Cow(String name, int weight, double milk, int corn, int hay) {

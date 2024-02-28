@@ -10,18 +10,50 @@ public class Farm implements IFarm {
     private double myHayCost;
     private double myCornCost;
 
-    private boolean feedCows() {
-
+    public Farm(ArrayList<Horse> horses, ArrayList<Cow> cows, int numHayBales, int numCorn, double hayCost, double cornCost) {
+        myHorses = horses;
+        myCows = cows;
+        myNumHayBales = numHayBales;
+        myNumCorn = numCorn;
+        myHayCost = hayCost;
+        myCornCost = cornCost;
     }
-    private boolean feedHorses() { return false; }
-    public boolean feedAllAnimals() {}
-    private double cowIncome(double perPound) { return 0; }
-    private double horseIncome() { return 0; }
+
+    private boolean feedCows() {
+        double cHayBales = 0;
+        double cCorn = 0;
+        for (Cow cow : myCows) {
+            cHayBales += cow.getNumHayBales();
+            cCorn += cow.getNumCorn();
+        }
+        return (myNumHayBales > cHayBales && myNumCorn > cCorn);
+    }
+    private boolean feedHorses() {
+        double hHayBales = 0;
+        double hCorn = 0;
+        for (Horse horse : myHorses) {
+            hHayBales += horse.getNumHayBales();
+            hCorn += horse.getNumCorn();
+        }
+        return (myNumHayBales > hHayBales && myNumCorn > hCorn);
+    }
+    public boolean feedAllAnimals() { return (feedCows() && feedHorses()); }
+    private double cowIncome(double perPound) {
+        double cIncome = 0;
+        for (Cow cow : myCows) cIncome += cow.value(myCornCost, myHayCost);
+        return cIncome;
+    }
+    private double horseIncome() {
+        double hIncome = 0;
+        for (Horse horse : myHorses) hIncome += horse.value(myCornCost, myHayCost);
+        return hIncome;
+    }
     public double farmIncome() {
-        double fIncome = 0;
-        for (Cow cow : myCows) fIncome += cow.value(myCornCost, myHayCost);
-        for (Horse horse : myHorses) fIncome += horse.value(myCornCost, myHayCost);
-        return fIncome;
+        return cowIncome(0.20) + horseIncome();
+//        double fIncome = 0;
+//        for (Cow cow : myCows) fIncome += cow.value(myCornCost, myHayCost);
+//        for (Horse horse : myHorses) fIncome += horse.value(myCornCost, myHayCost);
+//        return fIncome;
     }
     public int getWeight() {
         int weight = 0;
@@ -35,7 +67,7 @@ public class Farm implements IFarm {
         for (Horse horse : myHorses) totFeedCost += horse.getFeedCost(myCornCost, myHayCost);
         return totFeedCost;
     }
-    public ArrayList<Cow> getCows();
-    public ArrayList<Horse>getHorses();
+    public ArrayList<Cow> getCows() { return myCows; }
+    public ArrayList<Horse> getHorses() { return myHorses; }
 
 }
