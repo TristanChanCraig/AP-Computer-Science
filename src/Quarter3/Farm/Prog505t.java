@@ -1,5 +1,6 @@
 package Quarter3.Farm;
 
+import javax.sound.midi.Soundbank;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Array;
@@ -45,7 +46,7 @@ public class Prog505t {
 
             double income = f.farmIncome();
             double fCost = f.getCost();
-            double cWeight = f.getWeight();
+            int cWeight = f.getWeight();
             boolean enoughF = f.feedAllAnimals();
 
             for (Cow cow : cows) {
@@ -68,15 +69,15 @@ public class Prog505t {
                 double milk = cow.getMilk();
                 if (milk < lowestMilk) {
                     lowestMilk = milk;
-                    int nLM = lcv;
+                    nLM = lcv;
                 }
                 else if (milk < secLowestMilk) {
                     secLowestMilk = milk;
-                    int nSM = lcv;
+                    nSM = lcv;
                 }
                 else if (milk < thirdLowestMilk) {
                     thirdLowestMilk = milk;
-                    int nTM = lcv;
+                    nTM = lcv;
                 }
             }
             cows.remove(nLM);
@@ -86,8 +87,34 @@ public class Prog505t {
             nTM--;
             cows.remove(nTM);
 
+            double lowestRI = Double.MAX_VALUE;
+            int nLRI = -1;
+            double secLowestRI = Double.MAX_VALUE;
+            int nSRI = -1;
+            for (int lcv = 0; lcv < horses.size(); lcv++) {
+                Horse horse = horses.get(lcv);
+                double rI = horse.getRideCost();
+                if (lowestRI > rI) {
+                    lowestRI = rI;
+                    nLRI = lcv;
+                }
+                else if (secLowestRI > rI) {
+                    secLowestMilk = rI;
+                    nSRI = lcv;
+                }
+            }
 
+            horses.remove(nLRI);
+            nSRI--;
+            horses.remove(nSRI);
 
+            cows.set(0, new Cow("Cow", 1250, 80, 4, 3));
+
+            int totAnimals = horses.size() + cows.size();
+
+            System.out.printf("Income of the day: $%.2f\n", income);
+            System.out.println("Feeding costs of the day: $" + fCost);
+            System.out.println("Cumulative weight of all animals: " + cWeight);
 
             if (enoughF) {
                 System.out.printf("There are %d bales of hay and %d cobs of corn left in the barn after successfully.\n", haybales, corncobs);
@@ -97,9 +124,17 @@ public class Prog505t {
                 System.out.printf("There is insufficient food to feed the animals and we are requesting an immediate shipment of %d hay and $d corn.", haybales, corncobs);
             }
 
+            System.out.print("Total number of cows and horses on the farm: " + totAnimals);
 
         } catch (IOException e) {
             System.out.println("Can't find data file!");
         }
     }
 }
+/*
+Income of the day: $38.05
+Feeding costs of the day: $221.35
+Cumulative weight of all animals: 42835
+There are 920 bales of hay and 2439 cobs of corn left in the barn after successfully.
+Total number of cows and horses on the farm: 20
+ */
