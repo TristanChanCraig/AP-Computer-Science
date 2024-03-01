@@ -9,7 +9,7 @@ public class farm_but_it_is_jonah_house {
         for (husky h : huskies) myHuskies.add(h);
     }
 
-    public int getTotAge() {
+    private int getTotAge() {
         int totAge = 0;
         for (int lcv = 0; lcv < myHuskies.size(); lcv++) {
             totAge += myHuskies.get(lcv).getAge();
