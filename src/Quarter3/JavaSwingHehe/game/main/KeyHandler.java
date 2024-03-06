@@ -1,4 +1,4 @@
-package Quarter3.JavaSwingHehe.game;
+package Quarter3.JavaSwingHehe.game.main;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;

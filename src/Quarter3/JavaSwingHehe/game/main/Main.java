@@ -1,4 +1,6 @@
-package Quarter3.JavaSwingHehe.game;
+package Quarter3.JavaSwingHehe.game.main;
+
+import Quarter3.JavaSwingHehe.game.main.GamePanel;
 
 import javax.swing.*;
 
