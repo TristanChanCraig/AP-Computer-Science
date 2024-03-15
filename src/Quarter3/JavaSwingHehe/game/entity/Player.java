@@ -6,6 +6,7 @@ import Quarter3.JavaSwingHehe.game.main.KeyHandler;
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 
 public class Player extends Entity {
@@ -28,14 +29,14 @@ public class Player extends Entity {
 
     public void getPlayerImage() {
         try {
-            up1 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_up_1.png"));
-            up2 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_up_2.png"));
-            down1 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_down_1.png"));
-            down2 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_down_2.png"));
-            left1 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_left_1.png"));
-            left2 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_left_2.png"));
-            right1 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_right_1.png"));
-            right2 = ImageIO.read(getClass().getResourceAsStream("Quarter3/JavaSwingHehe/game/pics/boy_right_2.png"));
+            up1 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_down_1.png"));
+            up2 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_up_2.png"));
+            down1 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_down_1.png"));
+            down2 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_down_2.png"));
+            left1 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_left_1.png"));
+            left2 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_left_2.png"));
+            right1 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_right_1.png"));
+            right2 = ImageIO.read(new File("/src/Quarter3/JavaSwingHehe/game/pics/boy_right_2.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -63,6 +64,7 @@ public class Player extends Entity {
 //        g2.fillRect(x, y, gp.tileSize, gp.tileSize);
 
         BufferedImage image = null;
+        getPlayerImage();
 
         switch (direction) {
             case "up":
