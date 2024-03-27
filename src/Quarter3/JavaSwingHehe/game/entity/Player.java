@@ -24,7 +24,7 @@ public class Player extends Entity {
         x = 0;
         y = 0;
 //        speed = 4;
-        speed = 4;
+        speed = 2;
         direction = "down";
     }
 
@@ -49,17 +49,21 @@ public class Player extends Entity {
 
             if (keyH.upPressed == true) {
                 direction = "up";
-                if ((y -= speed) > 0) y -= speed;
+                y -= speed;
             } else if (keyH.downPressed == true) {
                 direction = "down";
-                if ((y += speed) < gp.tileSize) y += speed;
+                y += speed;
             } else if (keyH.leftPressed == true) {
                 direction = "left";
-                if ((x -= speed) > 0) x -= speed;
+                x -= speed;
             } else if (keyH.rightPressed == true) {
                 direction = "right";
-                if ((x += speed) < gp.tileSize) x += speed;
+                x += speed;
             }
+            if (x < 0) x = 0;
+            else if (x > 720) x = 720;
+            else if (y < 0) y = 0;
+            else if (y > 525) y = 525;
             spriteCounter++;
             if (spriteCounter > 10) {
                 if (spriteNum == 1) {
@@ -67,6 +71,10 @@ public class Player extends Entity {
                 } else if (spriteNum == 2) spriteNum = 1;
                 spriteCounter = 0;
             }
+            System.out.println("X = " + x);
+            System.out.println("Y = " + y);
+            System.out.println("Speed = " + speed);
+            speed = Math.pow(speed, 1.0001);
         }
     }
 
