@@ -10,6 +10,7 @@ public abstract class Media {
         this.isbn = isbn;
     }
 
-    // TODO: Implement getter methods
     public void setCheckedOut(boolean checkedOut) { isCheckedOut = checkedOut; }
+    public String getTitle() { return title; }
+    public String getIsbn() { return isbn; }
 }

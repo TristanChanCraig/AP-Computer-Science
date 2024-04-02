@@ -12,8 +12,10 @@ public class Transaction {
         this.checkoutDate = checkoutDate;
         returnDate = null;
     }
-    // TODO: Implement getters and setters
-//    public returnBook()
+
+    public void returnBook(String date) { returnDate = date; }
+    public String getIsbn() { return isbn; }
+    public String getPatronId() { return patronId; }
 
     @Override
     public String toString() {
