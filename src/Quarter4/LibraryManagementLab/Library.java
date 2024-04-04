@@ -22,13 +22,18 @@ public class Library implements LibrarySystem {
 
     @Override
     public void addBook(Book book) {
-        for (int lcv = 0; lcv < books.size(); lcv++) {
-            if (books.get(lcv).getTitle().compareTo(book.getTitle()) < 0) {
-                books.add(lcv, book);
+        if (books.size() != 0) {
+            for (int lcv = 0; lcv < books.size(); lcv++) {
+                if (books.get(lcv).getTitle().compareTo(book.getTitle()) < 0) {
+                    books.add(lcv, book);
+                }
+                if (authorBooks.get(lcv).getAuthor().compareTo(book.getAuthor()) < 0) {
+                    authorBooks.add(lcv, book);
+                }
             }
-            if (authorBooks.get(lcv).getAuthor().compareTo(book.getAuthor()) < 0) {
-                authorBooks.add(lcv, book);
-            }
+        } else {
+            books.add(book);
+            authorBooks.add(book);
         }
     }
     @Override
@@ -79,6 +84,7 @@ public class Library implements LibrarySystem {
             if (books.get(lcv).getIsbn().equals(isbn)) {
                 books.get(lcv).setCheckedOut(true);
             } else if (lcv == books.size() - 1) System.out.println("Can't find book!");
+        return true;
     }
 
     @Override
@@ -88,6 +94,7 @@ public class Library implements LibrarySystem {
             if (books.get(lcv).getIsbn().equals(isbn)) {
                 books.get(lcv).setCheckedOut(false);
             } else if (lcv == books.size() - 1) System.out.println("Can't find book!");
+        return true;
     }
 
     // Complete the implementation of LibrarySystem methods
