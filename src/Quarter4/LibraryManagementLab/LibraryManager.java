@@ -62,9 +62,10 @@ public class LibraryManager {
                 System.out.print("Enter ISBN: ");
                 String isbn = input.next();
                 System.out.print("Enter title: ");
-                String title = input.next();
+                input.nextLine();
+                String title = input.nextLine();
                 System.out.print("Enter author: ");
-                String author = input.next();
+                String author = input.nextLine();
                 l.addBook(new Book(title, isbn, author));
                 System.out.println("Book added successfully.");
             }
@@ -92,10 +93,11 @@ public class LibraryManager {
             }
             else if (choice == 6) {
                 System.out.print("Enter title: ");
-                String title = input.next();
+                input.nextLine();
+                String title = input.nextLine();
                 Book bok = l.searchBookByTitle(title);
                 System.out.println("Book found: ");
-                bok.toString();
+                System.out.println(bok.toString());
             }
             else if (choice == 7) {
                 System.out.print("Enter ISBN: ");
@@ -103,6 +105,7 @@ public class LibraryManager {
                 l.viewMostRecentTransaction(isbn);
             }
             else if (choice == 8) run = false;
+            else if (choice == 9) l.printAllBooks();
             System.out.println();
         }
     }

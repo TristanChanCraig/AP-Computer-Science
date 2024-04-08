@@ -24,16 +24,21 @@ public class Library implements LibrarySystem {
     public void addBook(Book book) {
         if (books.size() != 0) {
             for (int lcv = 0; lcv < books.size(); lcv++) {
-                if (books.get(lcv).getTitle().compareTo(book.getTitle()) < 0) {
+                if (book.getTitle().compareTo(books.get(lcv).getTitle()) < 0) {
                     books.add(lcv, book);
+                    return;
                 }
-                if (authorBooks.get(lcv).getAuthor().compareTo(book.getAuthor()) < 0) {
+                if (book.getAuthor().compareTo(authorBooks.get(lcv).getAuthor()) < 0) {
                     authorBooks.add(lcv, book);
+                    return;
                 }
             }
         } else {
             books.add(book);
             authorBooks.add(book);
+        }
+        if (books.size() == 4983) {
+            System.out.println("hi");
         }
     }
     @Override
@@ -127,7 +132,11 @@ public class Library implements LibrarySystem {
         } else return null;
     }
 
-
+    public void printAllBooks() {
+        for (Book book : books) {
+            System.out.println(book.toString());
+        }
+    }
 
     // You might want to add some helper methods here like getBookByIsbn, getPatronById, etc.
 
