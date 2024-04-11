@@ -37,9 +37,6 @@ public class Library implements LibrarySystem {
             books.add(book);
             authorBooks.add(book);
         }
-        if (books.size() == 4983) {
-            System.out.println("hi");
-        }
     }
     @Override
     public void removeBook(String isbn) {
@@ -112,7 +109,7 @@ public class Library implements LibrarySystem {
         Book closestBook = null;
         for (int lcv = 0; lcv < books.size(); lcv++) {
             Book currBook = books.get(lcv);
-            if (title.toLowerCase().contains(currBook.getTitle().toLowerCase())) return currBook;
+            if (currBook.getTitle().toLowerCase().contains(title.toLowerCase())) return currBook;
         }
         return null;
     }

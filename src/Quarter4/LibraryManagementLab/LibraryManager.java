@@ -55,6 +55,7 @@ public class LibraryManager {
                 System.out.print("Enter name: ");
                 String name = input.next();
                 System.out.print("Enter patron ID: ");
+                input.nextLine();
                 String pID = input.next();
                 l.addPatron(new Patron(name, pID));
                 System.out.println("Patron added successfully.");
@@ -112,3 +113,242 @@ public class LibraryManager {
 
     // add each book from the catalog to the library, then display the menu
 }
+/*
+Loading catalog...success.
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 1
+Enter name: mareek schard
+Enter patron ID: 21
+Patron added successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 2
+Enter ISBN: 23
+Enter title: john a punny buy
+Enter author: mareek scharly
+Book added successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 3
+Enter ISBN: 0451628640
+Book removed successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 4
+Enter ISBN: 23
+Enter patron ID: 21
+Can't find book!
+Book checked out successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 5
+Enter ISBN: 23
+Enter patron ID: 21
+Can't find book!
+Book checked in successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 6
+Enter title: john a punny buy
+Book found:
+Book{title='john a punny buy', isbn='23', author='mareek scharly'}
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 7
+Enter ISBN: 23
+[Transaction{isbn='23', patronId='21', checkoutDate='2024-04-11', returnDate='2024-04-11'}]
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 8
+ */
+
+/*
+C:\Users\chan.t3\.jdks\openjdk-20.0.2\bin\java.exe "-javaagent:C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\lib\idea_rt.jar=62793:C:\Program Files (x86)\JetBrains\IntelliJ IDEA Community Edition 2021.3.1\bin" -Dfile.encoding=UTF-8 -classpath C:\Users\chan.t3\IdeaProjects\AP-Computer-Science\out\production\Desktop Quarter4.LibraryManagementLab.LibraryManager
+Loading catalog...success.
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 1
+Enter name: Joe
+Enter patron ID: 123
+Patron added successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 6
+Enter title: Basic Nursing
+Book found:
+Book{title='Basic Nursing: Theory and Practice', isbn='0801678765', author='Patricia A. Potter'}
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 4
+Enter ISBN: 0801678765
+Enter patron ID: 123
+Can't find book!
+Book checked out successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 7
+Enter ISBN: 0801678765
+[Transaction{isbn='0801678765', patronId='123', checkoutDate='2024-04-11', returnDate='null'}]
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 5
+Enter ISBN: 0801678765
+Enter patron ID: 123
+Can't find book!
+Book checked in successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 7
+Enter ISBN: 0801678765
+[Transaction{isbn='0801678765', patronId='123', checkoutDate='2024-04-11', returnDate='2024-04-11'}]
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 2
+Enter ISBN: 1122334455
+Enter title: Testing User Interfaces 101
+Enter author: George Oregon
+Book added successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 3
+Enter ISBN: 1122334455
+Book removed successfully.
+
+Menu:
+1. Add Patrons
+2. Add Book
+3. Remove Book
+4. Checkout Book
+5. Return Book
+6. Search Book
+7. Search Book Transaction
+8. Exit
+Enter choice: 8
+ */
