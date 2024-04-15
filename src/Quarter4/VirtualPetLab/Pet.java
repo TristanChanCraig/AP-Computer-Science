@@ -34,7 +34,10 @@ public abstract class Pet {
     public abstract void play();
     public abstract void sleep();
 
-    // TODO: Add a public method to return the pet's status as a string
+    // : Add a public method to return the pet's status as a string
+    public String toString() {
+        return String.format("Hunger: %d\nEnergy: %d\nHappiness: %d", hunger, energy, happiness);
+    }
 
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
     // not exceed their maximum values or drop below 0 when feeding/playing/sleeping. Call this method using 'super'.
