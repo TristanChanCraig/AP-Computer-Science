@@ -77,4 +77,8 @@ public class ImageHelper {  // DO NOT MODIFY THIS CLASS
     public static String getRandomCatImg() {
         return getImgFromJSON("https://api.thecatapi.com/v1/images/search", "\"url\":\"", "\",\"width\"");
     }
+
+    public static String getRandomFoxImg() {
+        return getImgFromJSON("https://randomfox.ca/floof/?ref=apillist.fun", "\"image\":\"", "\",\"link\"");
+    }
 }

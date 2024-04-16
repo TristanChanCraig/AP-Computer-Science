@@ -9,9 +9,9 @@ public class Cat extends Pet {
     @Override
     public void feed() {
         // : Implement feeding behavior for Cat
-        super.setEnergy(super.getEnergy() + 2);
-        super.setHappiness(super.getHappiness() + 2);
-        super.setHunger(super.getHunger() - 2);
+        super.setEnergy(super.getEnergy() + 20);
+        super.setHappiness(super.getHappiness() + 20);
+        super.setHunger(super.getHunger() - 20);
 
         if (super.getEnergy() < 0) super.setEnergy(0);
         else if (super.getEnergy() > 100) super.setEnergy(100);
@@ -24,9 +24,9 @@ public class Cat extends Pet {
     @Override
     public void play() {
         // : Implement playing behavior for Cat
-        super.setHappiness(super.getHappiness() + 3);
-        super.setEnergy(super.getEnergy() + 2);
-        super.setHunger(super.getHunger() - 2);
+        super.setHappiness(super.getHappiness() + 30);
+        super.setEnergy(super.getEnergy() - 20);
+        super.setHunger(super.getHunger() + 20);
 
         if (super.getEnergy() < 0) super.setEnergy(0);
         else if (super.getEnergy() > 100) super.setEnergy(100);
@@ -39,9 +39,9 @@ public class Cat extends Pet {
     @Override
     public void sleep() {
         // : Implement sleeping behavior for Cat
-        super.setEnergy(super.getEnergy() + 2);
-        super.setHunger(super.getHunger() - 2);
-        super.setHappiness(super.getHappiness() + 2);
+        super.setEnergy(super.getEnergy() + 20);
+        super.setHunger(super.getHunger() + 20);
+        super.setHappiness(super.getHappiness() + 20);
 
         if (super.getEnergy() < 0) super.setEnergy(0);
         else if (super.getEnergy() > 100) super.setEnergy(100);

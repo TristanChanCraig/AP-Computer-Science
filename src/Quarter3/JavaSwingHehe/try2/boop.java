@@ -1,6 +1,7 @@
 package Quarter3.JavaSwingHehe.try2;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -30,7 +31,7 @@ public class boop extends JFrame implements ActionListener {
 
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setLayout(null);
-        this.setSize(500,500);
+        this.setSize(500, 500);
         this.setVisible(true);
         this.add(button);
     }
@@ -46,4 +47,5 @@ public class boop extends JFrame implements ActionListener {
     public static void main(String[] args) {
         boop b = new boop();
     }
+
 }

@@ -1,4 +1,10 @@
 package Quarter4.VirtualPetLab;
+
+import Quarter4.VirtualPetLab.Cat;
+import Quarter4.VirtualPetLab.Dog;
+import Quarter4.VirtualPetLab.Pet;
+import Quarter4.VirtualPetLab.PetManager;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
@@ -14,8 +20,10 @@ public class MainForm extends JFrame {
     private JLabel statusLabel;
     private JLabel imageLabel;
     private JComboBox<String> petSelectorComboBox;
-    // TODO: add adoption buttons
-    private JButton adoptButton;
+    // : add adoption buttons
+    private JButton adoptCatButton;
+    private JButton adoptDogButton;
+    private JButton adoptFoxButton;
     // Pet list
     private PetManager petManager = new PetManager();
 
@@ -87,11 +95,22 @@ public class MainForm extends JFrame {
             }
         });
 
-        // TODO: Implement adoption button actions
-        adoptButton.addActionListener(new ActionListener() {
+        // : Implement adoption button actions
+        adoptCatButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!name.trim().isEmpty()) petManager.addPet(new Cat(name));
+                updatePetList();
+            }
+        });
 
+        adoptDogButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!name.trim().isEmpty()) petManager.addPet(new Dog(name));
+                updatePetList();
             }
         });
     }
@@ -107,7 +126,6 @@ public class MainForm extends JFrame {
         ArrayList<Pet> list = petManager.getListPets();
         for (int lcv = 0; lcv < petManager.getNumPets(); lcv++) {
             petSelectorComboBox.addItem(list.get(lcv).getName());
-            lcv--;
         }
         // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
     }

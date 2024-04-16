@@ -1,6 +1,7 @@
 package Quarter3.JavaSwingHehe.bruh;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -40,4 +41,5 @@ public class kablam extends JFrame {
     private void createUIComponents() {
         // TODO: place custom component creation code here
     }
+
 }

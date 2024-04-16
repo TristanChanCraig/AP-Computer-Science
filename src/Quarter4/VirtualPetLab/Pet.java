@@ -36,7 +36,7 @@ public abstract class Pet {
 
     // : Add a public method to return the pet's status as a string
     public String toString() {
-        return String.format("Hunger: %d\nEnergy: %d\nHappiness: %d", hunger, energy, happiness);
+        return String.format("Hunger: %d\tEnergy: %d\tHappiness: %d", hunger, energy, happiness);
     }
 
     // It may also be help to make a public/protected "clampAttributes()" method to ensure that the pet's attributes do
