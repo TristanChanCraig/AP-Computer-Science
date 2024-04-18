@@ -18,7 +18,7 @@ public class Dog extends Pet {
         if (super.getHappiness() < 0) super.setHappiness(0);
         else if (super.getHappiness() > 100) super.setHappiness(100);
         if (super.getHunger() < 0) super.setHunger(0);
-        else if (super.getHappiness() > 100) super.setHappiness(100);
+        else if (super.getHunger() > 100) super.setHunger(100);
     }
 
     @Override
@@ -33,7 +33,7 @@ public class Dog extends Pet {
         if (super.getHappiness() < 0) super.setHappiness(0);
         else if (super.getHappiness() > 100) super.setHappiness(100);
         if (super.getHunger() < 0) super.setHunger(0);
-        else if (super.getHappiness() > 100) super.setHappiness(100);
+        else if (super.getHunger() > 100) super.setHunger(100);
     }
 
     @Override
@@ -48,6 +48,6 @@ public class Dog extends Pet {
         if (super.getHappiness() < 0) super.setHappiness(0);
         else if (super.getHappiness() > 100) super.setHappiness(100);
         if (super.getHunger() < 0) super.setHunger(0);
-        else if (super.getHappiness() > 100) super.setHappiness(100);
+        else if (super.getHunger() > 100) super.setHunger(100);
     }
 }

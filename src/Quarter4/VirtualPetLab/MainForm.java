@@ -51,6 +51,7 @@ public class MainForm extends JFrame {
                 Pet p = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 p.feed();
                 updateStatusLabel(p.toString());
+                waitButtons(1);
             }
         });
 
@@ -62,6 +63,7 @@ public class MainForm extends JFrame {
                 Pet p = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 p.play();
                 updateStatusLabel(p.toString());
+                waitButtons(1);
             }
         });
 
@@ -73,6 +75,7 @@ public class MainForm extends JFrame {
                 Pet p = petManager.getSelectedPet(petSelectorComboBox.getSelectedIndex());
                 p.sleep();
                 updateStatusLabel(p.toString());
+                waitButtons(1);
             }
         });
 
@@ -89,9 +92,7 @@ public class MainForm extends JFrame {
                 // 2. Update statusLabel with the selected pet's status
                 updateStatusLabel(p.toString());
                 // 3. Update imageLabel with the selected pet's image using setPetImage()
-                ImageIcon img = new ImageIcon(p.getImage());
-                imageLabel.setIcon(img);
-                waitButtons(1);
+                setPetImage(p.getImage());
             }
         });
 
@@ -110,6 +111,15 @@ public class MainForm extends JFrame {
             public void actionPerformed(ActionEvent e) {
                 String name = JOptionPane.showInputDialog("Enter new pet name: ");
                 if (!name.trim().isEmpty()) petManager.addPet(new Dog(name));
+                updatePetList();
+            }
+        });
+
+        adoptFoxButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                String name = JOptionPane.showInputDialog("Enter new pet name: ");
+                if (!name.trim().isEmpty()) petManager.addPet(new Fox(name));
                 updatePetList();
             }
         });
