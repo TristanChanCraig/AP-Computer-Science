@@ -138,6 +138,7 @@ public class MainForm extends JFrame {
             petSelectorComboBox.addItem(list.get(lcv).getName());
         }
         // After adding the pet, set the selected index to the last item (petManager.getPets().size() - 1)
+        petSelectorComboBox.setSelectedIndex(petManager.getNumPets() - 1);
     }
 
     /* ========== DO NOT MODIFY BELOW ========== */
