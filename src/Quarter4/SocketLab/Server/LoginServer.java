@@ -10,20 +10,21 @@ package Quarter4.SocketLab.Server;
 	Revised by:
 
  */
+
 import java.io.BufferedReader;
 import java.io.DataOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileWriter;
 import java.io.InputStreamReader;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Scanner;
-import java.util.ArrayList;
 
 public class LoginServer {
     public static void main(String[] args) throws Exception {
         final int PORT = 33235; //port number for this server application
+        final int ENC_OFFSET = 5;
+
         //setup welcome socket
         ServerSocket welcomeSocket = new ServerSocket(PORT);
         System.out.println("Now listening at " + welcomeSocket.getLocalSocketAddress());
@@ -48,12 +49,17 @@ public class LoginServer {
                 //parse protocol message
                 username = parsedProtocolMessage[1];
                 String password = parsedProtocolMessage[2];
+
+                username = CaesarCipher.encrypt(username, ENC_OFFSET);
+                password = CaesarCipher.encrypt(password, ENC_OFFSET);
+
                 System.out.println("User Name: " + username + ", password: " + password);
+
 
                 //check to see if username/password matches
                 boolean match = checkUsernamePassword(username, password);
                 String outgoingProtocolMessage = "";
-                /**TODO: Construct the response protocol message by referring to the client
+                /**: Construct the response protocol message by referring to the client
                  * side program's handling of server's response message*****/
                 if (!match) {
                     outgoingProtocolMessage = "loginResponse;failure";
@@ -61,7 +67,7 @@ public class LoginServer {
                     outgoingProtocolMessage = "loginResponse;success";
                     System.out.println("Response to client:" + outgoingProtocolMessage);
                 }
-                /**TODO: Encrypt the message before sending out *****/
+                /**: Encrypt the message before sending out *****/
                 System.out.println("Response to client:" + outgoingProtocolMessage);
                 outToClient.writeBytes(outgoingProtocolMessage + "\n");
             }//end of if(loginRequest) block
