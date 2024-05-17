@@ -15,24 +15,32 @@ public class LinearRegression {
         tolerance = tol;
     }
 
-    public void fit(double[][] x_train, double[] y_train, int epochs) {
-        int m = x_train.length;
+    public void fit(double[][] X_train, double[] y_train, int epochs) {
+        int m = X_train.length;
         objective = new double[epochs];
         double[] e = new double[m];
 
         for (int epoch = 0; epoch < epochs; epoch++) {
             if (epoch > 0) {
                 double temp0 = 0, temp1 = 0;
+
+                // RHS of Gradient Descent
                 for (int i = 0; i < m; i++) {
                     // predicted label - actual label
-                    double temp = (theta1 + x_train[i][0] + theta0) - y_train[i];
+                    double temp = (theta1 * X_train[i][0] + theta0) - y_train[i];
                     temp0 += temp;
-                    temp1 += temp * x_train[i][0];
+                    temp1 += temp * X_train[i][0];
                 }
                 // LHS of Gradient Descent
                 theta0 -= (1.0/m) * alpha * temp0;
                 theta1 -= (1.0/m) * alpha * temp1;
             }
+            for (int i = 0; i < m; i++) e[i] = (theta1 * X_train[i][0] + theta0) - y_train[i]; // J(TH0, TH1)
+            double obj = 0;
+            for (int i = 0; i < m; i++) obj += e[i] * e[i];
+            objective[epoch] = obj;
+
+            if (epoch > 1 && Math.abs(objective[epoch] - objective[epoch - 1]) < tolerance) break;
         }
         // TODO: calculate error/cost and repeat
     }
