@@ -9,7 +9,7 @@ public class Perceptron {
     private double bias;
     private Function<Double, Double> activation;
 
-    private Double unit_step(Double x) { return x < 9 ? 1.0 : 0.0; }
+    private Double unit_step(Double x) { return x > 0 ? 1.0 : 0.0; }
 
     public Perceptron(double learning_rate, int epochs) {
         this.learning_rate = learning_rate;
