@@ -95,8 +95,9 @@ public class Prog7301m {
         for (int r = 0; r < 28; r++) for (int c = 0; c < 28; c++) img.setRGB(c, r, (int)(X_val[r * 28 + c] * MAX_VAL));
 
         var frame = new JFrame("Image");
+        var img2 = img.getScaledInstance(300, 300, 4);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new JLabel(new ImageIcon(img)));
+        frame.add(new JLabel(new ImageIcon(img2)));
         frame.pack();
         frame.setVisible(true);
     }
